@@ -12,6 +12,7 @@ cardForm.addEventListener("submit", event => {
         nameError.textContent = "Can`t be blank";
         nameError.classList.add("active");
         cardNameInput.classList.add("error-active");
+        cardNameInput.setAttribute("aria-invalid", "true");
         isFormValid = false;
     }
 
@@ -19,11 +20,13 @@ cardForm.addEventListener("submit", event => {
         numberError.textContent = "Can`t be blank";
         numberError.classList.add("active");
         cardNumberInput.classList.add("error-active");
+        cardNumberInput.setAttribute("aria-invalid", "true");
         isFormValid = false;
     } else if (cardNumberInput.value.length < 19) {
         numberError.textContent = "Wrong format, too short";
         numberError.classList.add("active");
         cardNumberInput.classList.add("error-active");
+        cardNumberInput.setAttribute("aria-invalid", "true");
         isFormValid = false;
     }
 
@@ -31,11 +34,13 @@ cardForm.addEventListener("submit", event => {
         cvcError.textContent = "Can`t be blank";
         cvcError.classList.add("active");
         cardCvcInput.classList.add("error-active");
+        cardCvcInput.setAttribute("aria-invalid", "true");
         isFormValid = false;
     } else if (cardCvcInput.value.length < 3) {
         cvcError.textContent = "Wrong format, too short";
         cvcError.classList.add("active");
         cardCvcInput.classList.add("error-active");
+        cardCvcInput.setAttribute("aria-invalid", "true");
         isFormValid = false;
     }
 
@@ -43,11 +48,13 @@ cardForm.addEventListener("submit", event => {
         dateError.textContent = "Can`t be blank";
         dateError.classList.add("active");
         cardMonthInput.classList.add("error-active");
+        cardMonthInput.setAttribute("aria-invalid", "true");
         isFormValid = false;
     } else if (cardMonthInput.value.length < 2) {
         dateError.textContent = "Wrong format, too short";
         dateError.classList.add("active");
         cardMonthInput.classList.add("error-active");
+        cardMonthInput.setAttribute("aria-invalid", "true");
         isFormValid = false;
     }
 
@@ -55,11 +62,13 @@ cardForm.addEventListener("submit", event => {
         dateError.textContent = "Can`t be blank";
         dateError.classList.add("active");
         cardYearInput.classList.add("error-active");
+        cardYearInput.setAttribute("aria-invalid", "true");
         isFormValid = false;
     } else if (cardYearInput.value.length < 2) {
         dateError.textContent = "Wrong format, too short";
         dateError.classList.add("active");
         cardYearInput.classList.add("error-active");
+        cardYearInput.setAttribute("aria-invalid", "true");
         isFormValid = false;
     }
 
@@ -98,10 +107,12 @@ cardNumberInput.addEventListener("input", event => {
         if (numberError.textContent === "Wrong format, too short" && formatted.length === 19) {
             numberError.classList.remove("active");
             cardNumberInput.classList.remove("error-active");
+            cardNumberInput.removeAttribute("aria-invalid");
         }
         if (numberError.textContent === "Can`t be blank") {
             numberError.classList.remove("active");
             cardNumberInput.classList.remove("error-active");
+            cardNumberInput.removeAttribute("aria-invalid");
         }
     } else {
         cardFrontNumber.textContent = "0000 0000 0000 0000";
@@ -132,6 +143,7 @@ cardNameInput.addEventListener("input", event => {
         cardFrontName.textContent = value;
         nameError.classList.remove("active");
         cardNameInput.classList.remove("error-active");
+        cardNameInput.removeAttribute("aria-invalid");
     } else {
         cardFrontName.textContent = "Jane Appleseed";
     }
@@ -159,10 +171,12 @@ cardCvcInput.addEventListener("input", event => {
         if (cvcError.textContent === "Wrong format, too short" && digits.length === 3) {
             cvcError.classList.remove("active");
             cardCvcInput.classList.remove("error-active");
+            cardCvcInput.removeAttribute("aria-invalid");
         }
         if (cvcError.textContent === "Can`t be blank") {
             cvcError.classList.remove("active");
             cardCvcInput.classList.remove("error-active");
+            cardCvcInput.removeAttribute("aria-invalid");
         }
     } else {
         cardBackCvc.textContent = "000";
@@ -218,9 +232,11 @@ cardMonthInput.addEventListener("input", event => {
         }
         if (dateError.textContent === "Wrong format, too short" && digits.length === 2) {
             cardMonthInput.classList.remove("error-active");
+            cardMonthInput.removeAttribute("aria-invalid");
         }
         if (dateError.textContent === "Can`t be blank") {
             cardMonthInput.classList.remove("error-active");
+            cardMonthInput.removeAttribute("aria-invalid");
         }
     } else {
         cardFrontMonth.textContent = "00";
@@ -253,9 +269,11 @@ cardYearInput.addEventListener("input", event => {
         }
         if (dateError.textContent === "Wrong format, too short" && digits.length === 2) {
             cardYearInput.classList.remove("error-active");
+            cardYearInput.removeAttribute("aria-invalid");
         }
         if (dateError.textContent === "Can`t be blank") {
             cardYearInput.classList.remove("error-active");
+            cardYearInput.removeAttribute("aria-invalid");
         }
     } else {
         cardFrontYear.textContent = "00";

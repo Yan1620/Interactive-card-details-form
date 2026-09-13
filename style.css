@@ -175,6 +175,7 @@ label,
     letter-spacing: 1px;
     color: var(--clr-neutral-900);
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 input {
