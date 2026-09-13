@@ -72,6 +72,13 @@ cardForm.addEventListener("submit", event => {
         isFormValid = false;
     }
 
+    const firstInvalid = cardForm.querySelector('[aria-invalid="true"]')
+    
+    if (!isFormValid && firstInvalid) {
+        firstInvalid.focus();
+        return;
+    }
+
     if (isFormValid) {
         cardForm.classList.add("hidden");
         cardSuccess.classList.remove("hidden");
