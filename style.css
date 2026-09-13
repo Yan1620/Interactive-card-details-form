@@ -186,7 +186,7 @@ body {
 }
 
 label,
-#exp-date-label {
+.exp-date-label {
     font-size: var(--fs-300);
     letter-spacing: 1px;
     color: var(--clr-neutral-900);
@@ -310,6 +310,7 @@ input::placeholder {
     }
 
     .card-back {
+        width: 30rem;
         top: auto;
         bottom: 0;
     }
@@ -317,10 +318,6 @@ input::placeholder {
     .card-front {
         top: 0;
         bottom: auto;
-    }
-
-    .card-back {
-        width: 30rem;
     }
 
     .card-back__cvc {
