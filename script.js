@@ -9,7 +9,7 @@ cardForm.addEventListener("submit", event => {
     let isFormValid = true;
 
     if (cardNameInput.value === "") {
-        nameError.textContent = "Can`t be blank";
+        nameError.querySelector("span").textContent = "Can`t be blank";
         nameError.classList.add("active");
         cardNameInput.classList.add("error-active");
         cardNameInput.setAttribute("aria-invalid", "true");
@@ -17,13 +17,13 @@ cardForm.addEventListener("submit", event => {
     }
 
     if (cardNumberInput.value === "") {
-        numberError.textContent = "Can`t be blank";
+        numberError.querySelector("span").textContent = "Can`t be blank";
         numberError.classList.add("active");
         cardNumberInput.classList.add("error-active");
         cardNumberInput.setAttribute("aria-invalid", "true");
         isFormValid = false;
     } else if (cardNumberInput.value.length < 19) {
-        numberError.textContent = "Wrong format, too short";
+        numberError.querySelector("span").textContent = "Wrong format, too short";
         numberError.classList.add("active");
         cardNumberInput.classList.add("error-active");
         cardNumberInput.setAttribute("aria-invalid", "true");
@@ -31,13 +31,13 @@ cardForm.addEventListener("submit", event => {
     }
 
     if (cardCvcInput.value === "") {
-        cvcError.textContent = "Can`t be blank";
+        cvcError.querySelector("span").textContent = "Can`t be blank";
         cvcError.classList.add("active");
         cardCvcInput.classList.add("error-active");
         cardCvcInput.setAttribute("aria-invalid", "true");
         isFormValid = false;
     } else if (cardCvcInput.value.length < 3) {
-        cvcError.textContent = "Wrong format, too short";
+        cvcError.querySelector("span").textContent = "Wrong format, too short";
         cvcError.classList.add("active");
         cardCvcInput.classList.add("error-active");
         cardCvcInput.setAttribute("aria-invalid", "true");
@@ -45,13 +45,13 @@ cardForm.addEventListener("submit", event => {
     }
 
     if (cardMonthInput.value === "") {
-        dateError.textContent = "Can`t be blank";
+        dateError.querySelector("span").textContent = "Can`t be blank";
         dateError.classList.add("active");
         cardMonthInput.classList.add("error-active");
         cardMonthInput.setAttribute("aria-invalid", "true");
         isFormValid = false;
     } else if (cardMonthInput.value.length < 2) {
-        dateError.textContent = "Wrong format, too short";
+        dateError.querySelector("span").textContent = "Wrong format, too short";
         dateError.classList.add("active");
         cardMonthInput.classList.add("error-active");
         cardMonthInput.setAttribute("aria-invalid", "true");
@@ -59,13 +59,13 @@ cardForm.addEventListener("submit", event => {
     }
 
     if (cardYearInput.value === "") {
-        dateError.textContent = "Can`t be blank";
+        dateError.querySelector("span").textContent = "Can`t be blank";
         dateError.classList.add("active");
         cardYearInput.classList.add("error-active");
         cardYearInput.setAttribute("aria-invalid", "true");
         isFormValid = false;
     } else if (cardYearInput.value.length < 2) {
-        dateError.textContent = "Wrong format, too short";
+        dateError.querySelector("span").textContent = "Wrong format, too short";
         dateError.classList.add("active");
         cardYearInput.classList.add("error-active");
         cardYearInput.setAttribute("aria-invalid", "true");
@@ -111,12 +111,12 @@ cardNumberInput.addEventListener("input", event => {
 
     if (formatted) {
         cardFrontNumber.textContent = formatted;
-        if (numberError.textContent === "Wrong format, too short" && formatted.length === 19) {
+        if (numberError.querySelector("span").textContent === "Wrong format, too short" && formatted.length === 19) {
             numberError.classList.remove("active");
             cardNumberInput.classList.remove("error-active");
             cardNumberInput.removeAttribute("aria-invalid");
         }
-        if (numberError.textContent === "Can`t be blank") {
+        if (numberError.querySelector("span").textContent === "Can`t be blank") {
             numberError.classList.remove("active");
             cardNumberInput.classList.remove("error-active");
             cardNumberInput.removeAttribute("aria-invalid");
@@ -175,12 +175,12 @@ cardCvcInput.addEventListener("input", event => {
 
     if (digits) {
         cardBackCvc.textContent = digits;
-        if (cvcError.textContent === "Wrong format, too short" && digits.length === 3) {
+        if (cvcError.querySelector("span").textContent === "Wrong format, too short" && digits.length === 3) {
             cvcError.classList.remove("active");
             cardCvcInput.classList.remove("error-active");
             cardCvcInput.removeAttribute("aria-invalid");
         }
-        if (cvcError.textContent === "Can`t be blank") {
+        if (cvcError.querySelector("span").textContent === "Can`t be blank") {
             cvcError.classList.remove("active");
             cardCvcInput.classList.remove("error-active");
             cardCvcInput.removeAttribute("aria-invalid");
@@ -234,14 +234,14 @@ cardMonthInput.addEventListener("input", event => {
         if (digits.length === 2 && cardYearInput.value.length === 2) {
             dateError.classList.remove("active");
         }
-        if (dateError.textContent === "Can`t be blank" && cardYearInput.value.length !== 0) {
+        if (dateError.querySelector("span").textContent === "Can`t be blank" && cardYearInput.value.length !== 0) {
             dateError.classList.remove("active");
         }
-        if (dateError.textContent === "Wrong format, too short" && digits.length === 2) {
+        if (dateError.querySelector("span").textContent === "Wrong format, too short" && digits.length === 2) {
             cardMonthInput.classList.remove("error-active");
             cardMonthInput.removeAttribute("aria-invalid");
         }
-        if (dateError.textContent === "Can`t be blank") {
+        if (dateError.querySelector("span").textContent === "Can`t be blank") {
             cardMonthInput.classList.remove("error-active");
             cardMonthInput.removeAttribute("aria-invalid");
         }
@@ -271,14 +271,14 @@ cardYearInput.addEventListener("input", event => {
         if (digits.length === 2 && cardMonthInput.value.length === 2) {
             dateError.classList.remove("active");
         }
-        if (dateError.textContent === "Can`t be blank" && cardMonthInput.value.length !== 0) {
+        if (dateError.querySelector("span").textContent === "Can`t be blank" && cardMonthInput.value.length !== 0) {
             dateError.classList.remove("active");
         }
-        if (dateError.textContent === "Wrong format, too short" && digits.length === 2) {
+        if (dateError.querySelector("span").textContent === "Wrong format, too short" && digits.length === 2) {
             cardYearInput.classList.remove("error-active");
             cardYearInput.removeAttribute("aria-invalid");
         }
-        if (dateError.textContent === "Can`t be blank") {
+        if (dateError.querySelector("span").textContent === "Can`t be blank") {
             cardYearInput.classList.remove("error-active");
             cardYearInput.removeAttribute("aria-invalid");
         }

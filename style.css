@@ -152,15 +152,20 @@ body {
 }
 
 .error {
-    height: 0;
-    transition: 0.3s;
+    display: grid;
+    grid-template-rows: 0fr;
     overflow: hidden;
+    transition: grid-template-rows 0.3s;
     font-size: var(--fs-300);
     color: var(--clr-primary-400);
 }
 
+.error > span {
+    min-height: 0;
+}
+
 .error.active {
-    height: 0.85rem;
+    grid-template-rows: 1fr;
 }
 
 .card-form__date-cvc {

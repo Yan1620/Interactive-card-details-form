@@ -36,12 +36,12 @@
                 <div class="card-form__name">
                     <label for="card-name">Cardholder Name</label>
                     <input type="text" placeholder="e.g. Jane Appleseed" id="card-name" maxlength="26" aria-describedby="name-error">
-                    <span class="error name-error" id="name-error" role="alert"></span>
+                    <span class="error name-error" id="name-error" role="alert"><span></span></span>
                 </div>
                 <div class="card-form__numbers">
                     <label for="card-numbers">Card Number</label>
                     <input type="text" inputmode="numeric" placeholder="e.g. 1234 5678 9123 0000" id="card-numbers" maxlength="19" aria-describedby="number-error">
-                    <span class="error number-error" id="number-error" role="alert"></span>
+                    <span class="error number-error" id="number-error" role="alert"><span></span></span>
                 </div>
                 <div class="card-form__date-cvc">
                     <div class="card-form__date">
@@ -50,12 +50,12 @@
                             <input type="text" inputmode="numeric" placeholder="MM" id="exp-month" aria-label="Expiration month" maxlength="2" aria-describedby="date-error">
                             <input type="text" inputmode="numeric" placeholder="YY" id="exp-year" aria-label="Expiration year" maxlength="2" aria-describedby="date-error">
                         </div>
-                        <span class="error date-error" id="date-error" role="alert"></span>
+                        <span class="error date-error" id="date-error" role="alert"><span></span></span>
                     </div>
                     <div class="card-form__cvc">
                         <label for="card-cvc">CVC</label>
                         <input type="text" inputmode="numeric" placeholder="e.g. 123" id="card-cvc" maxlength="3" aria-describedby="cvc-error">
-                        <span class="error cvc-error" id="cvc-error" role="alert"></span>
+                        <span class="error cvc-error" id="cvc-error" role="alert"><span></span></span>
                     </div>
                 </div>
                 <button type="submit" class="card-form__button">Confirm</button>
